@@ -9,13 +9,16 @@ env/
 venv/
 .venv/
 
+# Gradio cache
+.gradio/
+
 # Environment variables
 .env
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
 
-# VS Code settings (optional)
+# VS Code settings 
 .vscode/
 
 # MacOS or Linux hidden files
@@ -23,3 +26,7 @@ venv/
 
 # Log files or local testing output
 *.log
+
+# Backup and temp files
+*.tmp
+*.bak
