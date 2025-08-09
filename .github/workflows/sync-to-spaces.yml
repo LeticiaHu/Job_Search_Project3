@@ -1,19 +1,44 @@
 name: Sync to Hugging Face Spaces
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
+env:
+  HF_USERNAME: Letty36       # <-- change
+  SPACE_NAME:  job-search-project           # <-- change
+
 jobs:
-  sync-to-hub:
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo (with LFS)
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
+          fetch-depth: 0
+
+      - name: Install Git LFS
+        run: |
+          git lfs install
+          git lfs pull
+
+      - name: Configure git user
+        run: |
+          git config user.email "actions@users.noreply.github.com"
+          git config user.name "GitHub Actions"
+
       - name: Push to Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ env.HF_USERNAME }}
+          SPACE_NAME: ${{ env.SPACE_NAME }}
         run: |
-          git push https://Letty36:${HF_TOKEN}@huggingface.co/spaces/Letty36/job-search-project main
+          # Add/replace remote with token auth
+          git remote remove space 2>/dev/null || true
+          git remote add space "https://${HF_USERNAME}:${HF_TOKEN}@huggingface.co/spaces/${HF_USERNAME}/${SPACE_NAME}"
+
+          # First-time syncs often need --force (history differs)
+          git push --force space main
+
