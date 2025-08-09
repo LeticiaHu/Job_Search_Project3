@@ -438,10 +438,13 @@ with gr.Blocks(
 
 # Launch the interface
 if __name__ == "__main__":
-	if not check_ollama_availability():
-		print("Warnings: Ollama is not available.")
-		print("Analysis functionality will not work.")
-		print("Please make sure Ollama is running with the mistral model.")
+	port = int(os.getenv("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port, show_error=True)
+	# if not check_ollama_availability():
+	# 	print("Warnings: Ollama is not available.")
+	# 	print("Analysis functionality will not work.")
+	# 	print("Please make sure Ollama is running with the mistral model.")
 
-demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
+#demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
+
     #demo.launch(share=True) # include share=True for live link
