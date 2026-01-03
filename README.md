@@ -46,7 +46,7 @@ USAJobs API – job data source
 dotenv – environment variable support
 
 
-🚀 Features
+## 🚀 Features
 
 🧠 Skills-Based Job Suggestions
 
