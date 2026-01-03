@@ -22,10 +22,15 @@ Everything runs directly in the browser — no external AI or cloud LLMs require
 The goal of this project is to:
 
 ✔ Help users discover federal jobs that match their skills and interests
+
 ✔ Simplify access to the USAJobs database
+
 ✔ Provide job insights in a clean and friendly UI
+
 ✔ Demonstrate real-world API integration using Python + Streamlit
+
 ✔ Keep things lightweight, fast, and privacy-friendly
+
 
 
 ## Requirements
@@ -40,30 +45,42 @@ USAJobs API – job data source
 
 dotenv – environment variable support
 
+
 🚀 Features
+
 🧠 Skills-Based Job Suggestions
 
 Enter your skills to receive recommended job fields.
 
+
 📥 Real-Time Federal Job Search
+
 
 Search by keyword or category
 Example:
 data analysis, finance, cybersecurity, healthcare
 
+
 🔎 Job Analysis Tools
+
 
 Choose a job and view:
 
+
 📝 Summary
+
 
 🎓 Qualifications
 
+
 💵 Salary range
+
 
 📄 Resume Tips
 
+
 Rule-based suggestions tailored to the job.
+
 
 🎨 Clean UI
 
