@@ -13,7 +13,7 @@ USAJOBS_API_KEY = st.secrets.get("USAJOBS_API_KEY", os.getenv("USAJOBS_API_KEY")
 
 
 
-------------------- USAJOBS API FUNCTION -----------------
+# ------------------- USAJOBS API FUNCTION -----------------
 
 def get_top_jobs(section: str, results_per_page: int = 5):
     """
