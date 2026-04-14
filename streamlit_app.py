@@ -3,6 +3,8 @@ import requests
 from dotenv import load_dotenv
 import streamlit as st
 
+
+st.write("Secrets loaded:", dict(st.secrets))
 # ----------------- ENV & CONFIG -----------------
 
 load_dotenv()
