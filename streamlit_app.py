@@ -10,9 +10,9 @@ load_dotenv()
 USAJOBS_USER_AGENT = st.secrets.get("USAJOBS_USER_AGENT", os.getenv("USAJOBS_USER_AGENT"))
 USAJOBS_API_KEY = st.secrets.get("USAJOBS_API_KEY", os.getenv("USAJOBS_API_KEY"))
 
-if not USAJOBS_USER_AGENT or not USAJOBS_API_KEY:
-    st.error("Missing USAJOBS_USER_AGENT or USAJOBS_API_KEY in Streamlit secrets or environment variables.")
-    st.stop()
+# if not USAJOBS_USER_AGENT or not USAJOBS_API_KEY:
+#     st.error("Missing USAJOBS_USER_AGENT or USAJOBS_API_KEY in Streamlit secrets or environment variables.")
+#     st.stop()
 
 # USAJOBS_USER_AGENT = os.getenv("USAJOBS_USER_AGENT")
 # NYC_JOBS_API = os.getenv("NYC_JOBS_API")  # API key for USAJobs
