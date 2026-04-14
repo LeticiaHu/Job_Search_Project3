@@ -31,8 +31,8 @@ def get_top_jobs(section: str, results_per_page: int = 5):
     Returns:
         dict: {"jobs": [MatchedObjectDescriptor, ...]} or {"error": "..."}.
     """
-    if not USAJOBS_USER_AGENT or not NYC_JOBS_API:
-        return {"error": "Missing USAJOBS_USER_AGENT or NYC_JOBS_API in environment variables."}
+    if not USAJOBS_USER_AGENT or not USAJOBS_API_KEY:
+        return {"error": "Missing USAJOBS_USER_AGENT or USAJOBS_API_KEY in Streamlit secrets or environment variables."}
 
     if not section:
         return {"error": "Please enter a job category or keyword."}
