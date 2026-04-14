@@ -11,19 +11,8 @@ load_dotenv()
 USAJOBS_USER_AGENT = st.secrets.get("USAJOBS_USER_AGENT", os.getenv("USAJOBS_USER_AGENT"))
 USAJOBS_API_KEY = st.secrets.get("USAJOBS_API_KEY", os.getenv("USAJOBS_API_KEY"))
 
-# if not USAJOBS_USER_AGENT or not USAJOBS_API_KEY:
-#     st.error("Missing USAJOBS_USER_AGENT or USAJOBS_API_KEY in Streamlit secrets or environment variables.")
-#     st.stop()
 
-# USAJOBS_USER_AGENT = os.getenv("USAJOBS_USER_AGENT")
-# NYC_JOBS_API = os.getenv("NYC_JOBS_API")  # API key for USAJobs
-
-# if not USAJOBS_USER_AGENT or not NYC_JOBS_API:
-#     print("Warning: USAJOBS_USER_AGENT and/or NYC_JOBS_API not found in environment variables.")
-#     print("Please create a .env file or set Streamlit secrets with these values.")
-
-
-# ----------------- USAJOBS API FUNCTION -----------------
+----------------- USAJOBS API FUNCTION -----------------
 
 def get_top_jobs(section: str, results_per_page: int = 5):
     """
@@ -50,12 +39,7 @@ def get_top_jobs(section: str, results_per_page: int = 5):
     "User-Agent": USAJOBS_USER_AGENT,
     "Authorization-Key": USAJOBS_API_KEY,
 }
-    # headers = {
-    #     "Host": "data.usajobs.gov",
-    #     "User-Agent": USAJOBS_USER_AGENT,
-    #     "Authorization-Key": NYC_JOBS_API,
-    # }
-
+  
     try:
         response = requests.get(base_url, headers=headers, params=params, timeout=15)
         response.raise_for_status()
